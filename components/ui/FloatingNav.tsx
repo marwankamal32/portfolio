@@ -8,7 +8,6 @@ import {
 } from "motion/react";
 import { cn } from "@/lib/utils";
 
-
 export const FloatingNav = ({
   navItems,
   className,
