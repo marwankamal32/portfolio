@@ -70,37 +70,30 @@ export const gridItems = [
 ];
 
 export const projects = [
-  {
-    id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
-  },
+  
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    title: "wordle-game-react-native",
+    des: "A simple and engaging Wordle-style mobile game built with React Native, where players guess hidden words in limited attempts through a clean and intuitive interface.",
+    img: "/Wordle.svg",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
+    link: "https://github.com/marwankamal32/wordle-game-react-native",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
+    title: "alien_invasion Game",
+    des: "A classic arcade game in Python where you control a spaceship to shoot aliens and avoid collisions.",
+    img: "/alianVision.svg",
+    iconLists: ["/Python.svg"],
+    link: "https://github.com/marwankamal32/alien_invasion",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
+    title: "Designs on Behance",
+    des: "A portfolio showcasing a variety of creative design and development projects, featuring user interface concepts, web applications, and visual experiments that highlight a passion for clean and functional experiences.",
+    img: "/Behance.svg",
+    iconLists: ["Beh.svg"],
+    link: "https://www.behance.net/marwankamal6",
   },
 ];
 
