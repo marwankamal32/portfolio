@@ -27,16 +27,16 @@ export const PinContainer = ({
   };
 
   return (
-    <a
+    <div
       className={cn(
         "group/pin relative block w-full h-full cursor-pointer z-10",
         containerClassName
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      href={href || "/"}
-      target="_blank"
-      rel="noopener noreferrer"
+      onClick={() => {
+        if (href) window.open(href, "_blank");
+      }}
     >
       <div style={{ perspective: "1000px" }} className="relative w-full h-full">
         <div
@@ -49,7 +49,7 @@ export const PinContainer = ({
           <PinPerspective title={title} href={href} />
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 
@@ -64,8 +64,8 @@ export const PinPerspective = ({
     <motion.div className="pointer-events-none absolute inset-0 opacity-0 group-hover/pin:opacity-100 z-0 transition duration-500">
       <div className="relative w-full h-full">
         {/* 🔗 الرابط اللي يظهر فوق عند الـ hover */}
-        {title && (
-          <div className="absolute -top-5 inset-x-0 flex justify-center z-20">
+        {title && href && (
+          <div className="absolute -top-5 inset-x-0 flex justify-center z-20 pointer-events-auto">
             <a
               href={href}
               target="_blank"

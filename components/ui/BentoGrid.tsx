@@ -66,8 +66,21 @@ export const BentoGridItem = ({
 
   const handleCopy = () => {
     const text = "marwankamal968@gmail.com";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
+
+    if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          setCopied(true);
+          // ترجع تقدر تنسخ تاني بعد 2 ثانية
+          setTimeout(() => setCopied(false), 2000);
+        })
+        .catch((err) => {
+          console.error("Failed to copy:", err);
+        });
+    } else {
+      console.warn("Clipboard API not supported in this browser.");
+    }
   };
 
   return (
