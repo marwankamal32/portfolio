@@ -1,20 +1,12 @@
-import { FaLocationArrow } from "react-icons/fa6";
+"use client";
 
 import { socialMedia } from "@/data";
 import { MagicButton } from "./ui/MagicButton";
+import { FaDownload } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
-      {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full opacity-50 "
-        />
-      </div>
-
+    <footer className="w-full pb-10 mb-[100px] md:mb-5" id="contact">
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
           Ready to take <span className="text-purple">your</span> digital
@@ -24,10 +16,12 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        <a href="mailto:marwankamal968@gmail.com">
+
+        <a href="Marwan Kamal Resume.pdf" download>
+          {" "}
           <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
+            title="Download My Resume"
+            icon={<FaDownload />}
             position="right"
           />
         </a>

@@ -4,7 +4,7 @@ import { Spotlight } from "./ui/Spotlight";
 import React from "react";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { MagicButton } from "./ui/MagicButton";
-import { FaDownload } from "react-icons/fa";
+import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -52,14 +52,13 @@ const Hero = () => {
             Hi! I&apos;m Marwan, a FrontEnd Developer based in Egypt.
           </p>
 
-          <a href="Marwan Kamal Resume.pdf"download >
-            {" "}
-            <MagicButton
-              title="Download My Resume"
-              icon={<FaDownload />}
-              position="right"
-            />
-          </a>
+          <a href="#about">
+          <MagicButton
+            title="Show My Work"
+            icon={<FaLocationArrow />}
+            position="right"
+          />
+        </a>
         </div>
       </div>
     </div>
