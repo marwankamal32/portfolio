@@ -21,7 +21,7 @@ interface FloatingNavProps {
 
 export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
   const { scrollYProgress } = useScroll();
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useMotionValueEvent(scrollYProgress, "change", (current: number) => {
     const previous = scrollYProgress.getPrevious() as number | undefined;
@@ -38,18 +38,23 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
     <AnimatePresence mode="wait">
       <motion.div
         initial={{
-          opacity: 1,
+          opacity: 0,
+          scale: 0.95,
           y: -100,
         }}
         animate={{
           y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
+          scale: visible ? 1 : 0.95,
         }}
         transition={{
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-fit fixed top-10 inset-x-0 mx-auto border rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-10 py-5 items-center justify-center space-x-4 border-white/[0.2] bg-black-100",
+          "flex max-w-fit fixed top-6 inset-x-0 mx-auto z-[5000] px-6 py-3 items-center justify-center space-x-4",
+          "rounded-xl border border-white/20 bg-white/10 backdrop-blur-md",
+          "shadow-lg shadow-black/10",
+          "dark:bg-neutral-900/50 dark:border-neutral-700/40",
           className
         )}
       >
@@ -58,7 +63,9 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
             key={`link-${idx}`}
             href={navItem.link}
             className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              "relative flex items-center space-x-1 text-neutral-700 dark:text-neutral-200",
+              "hover:text-neutral-900 dark:hover:text-white",
+              "transition-colors duration-200"
             )}
             aria-label={navItem.name}
           >

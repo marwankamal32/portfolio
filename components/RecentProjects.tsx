@@ -1,66 +1,74 @@
 "use client";
 
-import { projects } from "@/data";
+import { FaLocationArrow } from "react-icons/fa6";
 import React from "react";
+import { projects } from "@/data";
 import { PinContainer } from "./ui/PinContainer";
-import { FaLocationArrow } from "react-icons/fa";
 
 const RecentProjects = () => {
   return (
     <div className="py-20" id="projects">
-      <h1 className="heading text-center">
+      <h1 className="heading">
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
       </h1>
-
-      <div className="flex flex-wrap justify-center gap-10 mt-12">
-        {projects.map(({ id, title, des, img, iconLists, link }) => (
+      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
+        {projects.map((item) => (
           <div
-            key={id}
-            className="w-full sm:w-[80%] md:w-[45%] lg:w-[30%] flex justify-center"
+            className=" sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]"
+            key={item.id}
           >
-            <PinContainer title={title} href={link} className="w-full">
-              {/* Card Top Image Section */}
-              <div className="relative flex items-center justify-center w-full h-[200px] overflow-hidden mb-4">
-                <div className="relative w-full h-full overflow-hidden rounded-2xl bg-[#13162d]">
-                  <img
-                    src="/bg.png"
-                    alt="bg-img"
-                    className="object-cover w-full h-full"
-                  />
+            <PinContainer
+              title={item.link} href={item.link}
+            >
+              <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10">
+                <div
+                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
+                  style={{ backgroundColor: "#13162D" }}
+                >
+                  <img src="/bg.png" alt="bgimg" />
                 </div>
                 <img
-                  src={img}
-                  alt={title}
-                  className="z-10 absolute bottom-0 max-h-full object-contain"
+                  src={item.img}
+                  alt="cover"
+                  className="z-10 absolute bottom-0"
                 />
               </div>
 
-              {/* Title & Description */}
-              <h1 className="font-bold text-base lg:text-lg mb-1 line-clamp-1">
-                {title}
+              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+                {item.title}
               </h1>
-              <p className="text-sm text-white/80 line-clamp-2">{des}</p>
 
-              {/* Footer Section */}
-              <div className="flex items-center justify-between mt-5">
+              <p
+                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                style={{
+                  color: "#BEC1DD",
+                  margin: "1vh 0",
+                }}
+              >
+                {item.des}
+              </p>
+
+              <div className="flex items-center justify-between mt-7 mb-3">
                 <div className="flex items-center">
-                  {iconLists.map((icon, index) => (
+                  {item.iconLists.map((icon, index) => (
                     <div
-                      key={icon}
-                      className="border border-white/[0.2] rounded-full bg-black w-7 h-7 flex justify-center items-center"
+                      key={index}
+                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       style={{
-                        transform: `translateX(-${index * 8}px)`,
-                        zIndex: 10 - index,
+                        transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt={icon} className="p-1.5" />
+                      <img src={icon} alt="icon5" className="p-2" />
                     </div>
                   ))}
                 </div>
-                <div className="flex items-center">
-                  <p className="text-sm text-purple">Check Live Site</p>
-                  <FaLocationArrow className="ms-2" color="#CBACF9" />
+
+                <div className="flex justify-center items-center">
+                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                    Check Live Site
+                  </p>
+                  <FaLocationArrow className="ms-3" color="#CBACF9" />
                 </div>
               </div>
             </PinContainer>

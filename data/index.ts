@@ -70,28 +70,36 @@ export const gridItems = [
 
 export const projects = [
   {
+    id: 1,
+    title: "Food Delivery",
+    des: "Food Delivery app built with React Native, TypeScript, and Tailwind CSS. Featuring Google Auth, smart search, cart, and smooth navigation, with Appwrite handling the backend and storage.",
+    img: "/Food Delivery.svg",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg","/APWRITTE.svg"],
+    link: "https://github.com/marwankamal32/fast_food_app",
+  },
+  {
     id: 2,
+    title: "Job App",
+    des: "Job Finder app built with React Native, TypeScript, and Tailwind CSS. Features dynamic job browsing, detailed insights, smart search with pagination, and third-party API integration via custom hook…",
+    img: "/JobApp.svg",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg","/Rapid.svg"],
+    link: "https://github.com/marwankamal32/project_jobs_app",
+  },
+  {
+    id: 3,
     title: "wordle-game-react-native",
     des: "A simple and engaging Wordle-style mobile game built with React Native, where players guess hidden words in limited attempts through a clean and intuitive interface.",
-    img: "/Wordle.svg",
+    img: "/WordleClone.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
     link: "https://github.com/marwankamal32/wordle-game-react-native",
   },
   {
-    id: 3,
+    id: 4,
     title: "alien_invasion Game",
     des: "A classic arcade game in Python where you control a spaceship to shoot aliens and avoid collisions.",
     img: "/alianVision.svg",
     iconLists: ["/Python.svg"],
     link: "https://github.com/marwankamal32/alien_invasion",
-  },
-  {
-    id: 4,
-    title: "Designs on Behance",
-    des: "A portfolio showcasing a variety of creative design and development projects, featuring user interface concepts, web applications, and visual experiments that highlight a passion for clean and functional experiences.",
-    img: "/Behance.svg",
-    iconLists: ["Beh.svg"],
-    link: "https://www.behance.net/marwankamal6",
   },
 ];
 
